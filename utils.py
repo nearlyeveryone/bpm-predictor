@@ -5,9 +5,31 @@ import math
 
 # directory settings
 
+"""
+Example directory settings for usage.
+
+# store everything that doesn't need to be fast in the work dir.
 working_dir = '/mnt/mirrored-storage/tf-workdir'
+
+#store the transformation cache on a fast NVMe drive
 trans_cache_dir = '/mnt/nvme-storage/tf'
+
+# nfs is for distributed training
 nfs_dir = '/tmp/tf'
+
+db_path = 'sqlite:///' + os.path.join(working_dir, 'beatmap_metadata.db')
+zipped_beatmaps_dir = os.path.join(working_dir, 'beatmaps')
+beatmap_extract_dir = os.path.join(working_dir, 'extracted')
+checkpoint_path = os.path.join(working_dir, 'beat-prediction-model.{epoch:02d}-{val_loss:.2f}.hdf5')
+latest_path = os.path.join(working_dir, 'beat-prediction-latest.hdf5')
+"""
+
+working_dir = ''
+trans_cache_dir = ''
+
+# nfs is for distributed training
+nfs_dir = '/tmp/tf'
+
 db_path = 'sqlite:///' + os.path.join(working_dir, 'beatmap_metadata.db')
 zipped_beatmaps_dir = os.path.join(working_dir, 'beatmaps')
 beatmap_extract_dir = os.path.join(working_dir, 'extracted')
